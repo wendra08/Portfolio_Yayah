@@ -1,4 +1,5 @@
 export const translations: Record<string, string> = {
+  'Muhamad Yayah — Assistant Manager HRD. Pengalaman dalam operasional HR, penggajian, rekrutmen, hubungan karyawan, serta administrasi inventaris dan aset.': 'Muhamad Yayah — Assistant Manager HRD. Experience in HR operations, payroll, recruitment, employee relations, and inventory and asset administration.',
   'Dukungan untuk': 'Supporting',
   'operasional perusahaan.': 'company operations.',
   'Selain pekerjaan HR, saya menggunakan sistem internal untuk administrasi inventaris dan aset. Pengalaman operasional sebelumnya juga mencakup penyusunan anggaran, pemesanan kebutuhan, dan koordinasi pemeliharaan.': 'Alongside my HR work, I use an internal system for inventory and asset administration. My earlier operational experience also includes budgeting, ordering supplies, and maintenance coordination.',

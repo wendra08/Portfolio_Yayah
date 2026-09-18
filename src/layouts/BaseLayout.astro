@@ -1,6 +1,14 @@
 ---
 import PageMotion from '../components/PageMotion.astro';
+import { getImage } from 'astro:assets';
+import portrait from '../assets/muhamad-yayah-formal.png';
 const { title = 'Muhamad Yayah | HR & HRGA', animate = true, noindex = false } = Astro.props;
+const description = 'Muhamad Yayah — Assistant Manager HRD. Pengalaman dalam operasional HR, penggajian, rekrutmen, hubungan karyawan, serta administrasi inventaris dan aset.';
+const shareImage = await getImage({ src: portrait, width: 900, format: 'jpg', quality: 85 });
+// Public crawlers require absolute URLs. Configure PUBLIC_SITE_URL before deployment.
+const publicSite = Astro.site;
+const imageUrl = publicSite ? new URL(shareImage.src, publicSite).href : shareImage.src;
+const canonicalUrl = publicSite ? new URL(Astro.url.pathname, publicSite).href : undefined;
 ---
 
 <!doctype html>
@@ -8,8 +16,27 @@ const { title = 'Muhamad Yayah | HR & HRGA', animate = true, noindex = false } =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Portofolio Muhamad Yayah, Assistant Manager HRD dengan pengalaman dalam operasional HR, penggajian, rekrutmen, dan hubungan dengan karyawan." />
+    <meta name="description" content={description} />
     <title>{title}</title>
+    {!noindex && <>
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Muhamad Yayah | Portofolio Profesional" />
+      <meta property="og:title" content="Muhamad Yayah | Assistant Manager HRD" />
+      <meta property="og:description" content={description} />
+      <meta property="og:locale" content="id_ID" />
+      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+      <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content={shareImage.attributes.width} />
+      <meta property="og:image:height" content={shareImage.attributes.height} />
+      <meta property="og:image:alt" content="Muhamad Yayah, Assistant Manager HRD, mengenakan jas navy dan kemeja putih." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Muhamad Yayah | Assistant Manager HRD" />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image:alt" content="Muhamad Yayah, Assistant Manager HRD" />
+    </>}
     {noindex && <meta name="robots" content="noindex" />}
   </head>
   <body>
