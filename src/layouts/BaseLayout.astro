@@ -3,11 +3,10 @@ import PageMotion from '../components/PageMotion.astro';
 import { getImage } from 'astro:assets';
 import portrait from '../assets/muhamad-yayah-formal.png';
 const { title = 'Muhamad Yayah | HR & HRGA', animate = true, noindex = false } = Astro.props;
-const description = 'Muhamad Yayah — Assistant Manager HRD. Pengalaman dalam operasional HR, penggajian, rekrutmen, hubungan karyawan, serta administrasi inventaris dan aset.';
-const shareImage = await getImage({ src: portrait, width: 900, format: 'jpg', quality: 85 });
-// Public crawlers require absolute URLs. Configure PUBLIC_SITE_URL before deployment.
+const description = 'HR professional dengan 5+ tahun pengalaman di HR operations, payroll, recruitment, dan employee relations.';
+const socialImageUrl = 'https://muhamadyayah.my.id/og-image.jpg';
 const publicSite = Astro.site;
-const imageUrl = publicSite ? new URL(shareImage.src, publicSite).href : shareImage.src;
+const imageUrl = publicSite ? new URL('/og-image.jpg', publicSite).href : socialImageUrl;
 const canonicalUrl = publicSite ? new URL(Astro.url.pathname, publicSite).href : undefined;
 ---
 
@@ -28,8 +27,8 @@ const canonicalUrl = publicSite ? new URL(Astro.url.pathname, publicSite).href :
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:type" content="image/jpeg" />
-      <meta property="og:image:width" content={shareImage.attributes.width} />
-      <meta property="og:image:height" content={shareImage.attributes.height} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="Muhamad Yayah, Assistant Manager HRD, mengenakan jas navy dan kemeja putih." />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Muhamad Yayah | Assistant Manager HRD" />
