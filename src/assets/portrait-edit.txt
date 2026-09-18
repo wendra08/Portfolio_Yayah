@@ -1,0 +1,9 @@
+Tool mode: built-in image_gen
+Use case: background-extraction
+Edit target: src/assets/muhamad-yayah.jpeg
+
+Prompt:
+Use case: background-extraction. Edit target: the supplied portrait photograph of Muhamad Yayah. Produce a high-quality transparent PNG cutout of the exact same man for his HR professional portfolio. Remove ONLY the white/light-gray background and make it genuinely transparent, with precise natural hair and shoulder edges. Preserve his identity, face geometry, smile, age, skin texture, hair, pose, and blue patterned batik shirt EXACTLY as in the original photo. Preserve original portrait composition and visible torso. No facial beautification, no regeneration of face, no wardrobe changes, no text, no watermark, no new objects, no backdrop, no artificial glow or outline. The source subject is already well photographed; the sole edit is clean background removal.
+
+Output: src/assets/muhamad-yayah-cutout.png
+Usage: Only the alpha channel is used as a CSS mask. The visible portrait is the original photograph, not the generated RGB pixels.

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+---
+
+<BaseLayout title="Halaman tidak ditemukan | Muhamad Yayah" animate={false} noindex={true}>
+  <header><a class="brand" href="/">Muhamad Yayah<small>Human Resources</small></a><LanguageSwitcher /></header>
+  <main>
+    <p class="error-code" aria-hidden="true">404<span>.</span></p>
+    <p class="eyebrow">HALAMAN TIDAK DITEMUKAN</p>
+    <h1>Sepertinya Anda<br />salah alamat.</h1>
+    <p class="description">Halaman yang Anda cari mungkin sudah dipindahkan atau alamatnya kurang tepat. Silakan kembali ke beranda untuk melihat profil dan pengalaman saya.</p>
+    <div class="actions"><a class="primary" href="/">Kembali ke beranda <span aria-hidden="true">↗</span></a><a class="secondary" href="/#kontak">Hubungi saya</a></div>
+    <nav aria-label="Tautan portofolio"><a href="/#profil">Profil</a><a href="/#pengalaman">Pengalaman</a><a href="/documents/CV_Muhamad_Yayah_ATS.pdf" download>Unduh CV ↓</a></nav>
+  </main>
+  <footer><span>© {new Date().getFullYear()} Muhamad Yayah</span><span>Balikpapan, Indonesia</span></footer>
+</BaseLayout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap');
+  :global(*){box-sizing:border-box}:global(body){margin:0;min-height:100svh;display:flex;flex-direction:column;background:#faf9f6;color:#223344;font-family:'Source Sans 3',sans-serif;line-height:1.6}:global(a){color:inherit}:global(a:focus-visible){outline:3px solid #318078;outline-offset:6px}
+  header,footer{width:min(1120px,calc(100% - 64px));margin-inline:auto;display:flex;justify-content:space-between;align-items:center;gap:20px}header{padding-block:26px;border-bottom:1px solid #dce3de}.brand{text-decoration:none;font-size:17px;font-weight:600;line-height:1.3}.brand small{display:block;font-size:12px;color:#738087;font-weight:400;margin-top:4px}header>span{font-size:10px;letter-spacing:.13em;color:#77857c}
+  main{flex:1;width:min(620px,calc(100% - 48px));margin:0 auto;padding:45px 0 65px;text-align:center}.error-code{font:500 clamp(100px,17vw,170px)/1 'Lora',Georgia,serif;letter-spacing:-.075em;margin:0 0 30px;color:#d6e2da}.error-code span{color:#72988a}.eyebrow{color:#236b62;font-size:10px;letter-spacing:.16em;margin:0 0 16px}h1{font:400 clamp(32px,5vw,47px)/1.2 'Lora',Georgia,serif;letter-spacing:-.04em;margin:0}.description{max-width:435px;margin:23px auto 28px;color:#6b7880;font-size:16px}.actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:25px}.primary{background:#223344;color:#fff;padding:12px 20px;text-decoration:none;font-size:14px}.primary span{margin-left:20px}.primary:hover{background:#236b62}.secondary{font-size:14px;text-decoration:none;border-bottom:1px solid #aebdb8}nav{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:40px;padding-top:23px;border-top:1px solid #dce3de}nav a{font-size:12px;color:#62796c;text-decoration:none}nav a:hover{text-decoration:underline}footer{border-top:1px solid #dce3de;padding-block:21px;font-size:11px;color:#829088}
+  @media(max-width:500px){header,footer{width:calc(100% - 40px)}header>span{display:none}main{padding-block:40px}footer{font-size:10px}.description{font-size:15px}}
+</style>

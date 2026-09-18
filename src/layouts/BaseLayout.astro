@@ -1,0 +1,19 @@
+---
+import PageMotion from '../components/PageMotion.astro';
+const { title = 'Muhamad Yayah | HR & HRGA', animate = true, noindex = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Portofolio Muhamad Yayah, Assistant Manager HRD dengan pengalaman dalam operasional HR, penggajian, rekrutmen, dan hubungan dengan karyawan." />
+    <title>{title}</title>
+    {noindex && <meta name="robots" content="noindex" />}
+  </head>
+  <body>
+    {animate && <PageMotion />}
+    <slot />
+  </body>
+</html>

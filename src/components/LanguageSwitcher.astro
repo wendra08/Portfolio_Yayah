@@ -1,0 +1,47 @@
+<div class="language-switch" role="group" aria-label="Bahasa / Language">
+  <button type="button" data-language="id" aria-pressed="true" lang="id">ID</button>
+  <span aria-hidden="true">/</span>
+  <button type="button" data-language="en" aria-pressed="false" lang="en">EN</button>
+</div>
+<script>
+  import { translations } from '../data/translations';
+  const originals = new Map<Text, string>();
+  const attributes: { element: Element; name: string; value: string }[] = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode as Text;
+    if (node.parentElement?.closest('script, style, .language-switch')) continue;
+    if (node.textContent?.trim()) originals.set(node, node.parentElement?.classList.contains('welcome-label') ? 'SELAMAT DATANG' : node.textContent);
+  }
+  document.querySelectorAll('[aria-label], [alt], meta[name="description"]').forEach((element) => {
+    for (const name of ['aria-label', 'alt', 'content']) {
+      const value = element.getAttribute(name);
+      if (value) attributes.push({ element, name, value });
+    }
+  });
+  const originalTitle = document.title;
+  function translate(value: string, language: string) {
+    return language === 'en' ? value.replace(/^(\s*)([\s\S]*?)(\s*)$/, (_, before, text, after) => before + (translations[text] ?? text) + after) : value;
+  }
+  function setLanguage(language: string) {
+    const lang = language === 'en' ? 'en' : 'id';
+    document.documentElement.lang = lang;
+    originals.forEach((value, node) => { node.textContent = translate(value, lang); });
+    attributes.forEach(({ element, name, value }) => element.setAttribute(name, translate(value, lang)));
+    document.title = translate(originalTitle, lang);
+    document.querySelectorAll<HTMLButtonElement>('[data-language]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.language === lang)));
+    const pause = document.querySelector('.tools-pause');
+    if (pause) {
+      const paused = pause.getAttribute('aria-pressed') === 'true';
+      pause.textContent = lang === 'en' ? (paused ? 'Play animation' : 'Pause animation') : (paused ? 'Putar animasi' : 'Jeda animasi');
+    }
+    try { localStorage.setItem('portfolio-language', lang); } catch {}
+  }
+  let saved = 'id';
+  try { saved = localStorage.getItem('portfolio-language') || 'id'; } catch {}
+  setLanguage(saved);
+  document.querySelectorAll<HTMLButtonElement>('[data-language]').forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language || 'id')));
+</script>
+<style>
+  .language-switch{display:flex;align-items:center;gap:3px;flex-shrink:0;font:500 12px 'Source Sans 3',sans-serif;letter-spacing:.04em}.language-switch button{font:inherit;background:transparent;border:0;color:#738087;cursor:pointer;min-width:34px;min-height:38px;padding:7px}.language-switch button[aria-pressed="true"]{color:#236b62;font-weight:700;text-decoration:underline;text-underline-offset:5px}.language-switch button:focus-visible{outline:2px solid #236b62;outline-offset:2px}.language-switch span{color:#bac5be}
+</style>
