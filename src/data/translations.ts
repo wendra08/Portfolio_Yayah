@@ -1,4 +1,7 @@
 export const translations: Record<string, string> = {
+  'Saat ini saya menjabat sebagai Assistant Manager HRD di PT ITCI Kartika Utama, dengan tanggung jawab memimpin operasional dan tim HR.': 'I currently serve as Assistant Manager HRD at PT ITCI Kartika Utama, leading HR operations and the HR team.',
+  'Perangkat pendukung kerja.': 'Tools I work with.', 'Asisten AI': 'AI assistant',
+  'Lihat detail': 'View details', 'Tutup detail': 'Hide details',
   'Pratinjau CV': 'Preview CV', 'Tutup': 'Close',
   'Jika PDF tidak tampil, buka di tab baru atau unduh dokumennya.': 'If the PDF does not display, open it in a new tab or download it.',
   'Pratinjau dokumen CV Muhamad Yayah': 'Preview of Muhamad Yayah’s CV',

@@ -1,5 +1,6 @@
 ---
 import PageMotion from '../components/PageMotion.astro';
+import '../styles/refinements.css';
 import { getImage } from 'astro:assets';
 import portrait from '../assets/muhamad-yayah-formal.png';
 const { title = 'Muhamad Yayah | HR & HRGA', animate = true, noindex = false } = Astro.props;
@@ -17,6 +18,8 @@ const canonicalUrl = publicSite ? new URL(Astro.url.pathname, publicSite).href :
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#223344" />
     {!noindex && <>
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       <meta property="og:type" content="website" />

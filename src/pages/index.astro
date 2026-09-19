@@ -61,7 +61,7 @@ const experience = [
 
     <section class="section container profile-section" id="profil">
       <div class="section-side"><p class="eyebrow">01 / PROFIL</p><h2>Mengenal saya.</h2></div>
-      <div class="profile-content"><p class="intro-text">Saya memulai karier di industri perhotelan dan restoran sebelum beralih ke bidang HR. Pengalaman memimpin tim operasional menjadi bekal untuk memahami kebutuhan karyawan dan perusahaan.</p><p>Saat ini saya menjabat sebagai Assistant Manager HRD di PT ITCI Kartika Utama. Tanggung jawab saya mencakup operasional HR, pengawasan staf, penggajian, rekrutmen, penyusunan anggaran, serta koordinasi audit.</p><p>Saya terbiasa berkomunikasi dengan karyawan, manajemen, dan instansi ketenagakerjaan untuk menyelesaikan persoalan administrasi maupun hubungan kerja.</p><div class="profile-details"><div><span>PENDIDIKAN SAAT INI</span><strong>S1 Hukum · sedang ditempuh</strong><p>Universitas Terbuka, Fakultas Hukum<br />2023 — sekarang</p></div><div><span>BAHASA & PERANGKAT KERJA</span><strong>Bahasa Indonesia & bahasa Inggris</strong><p>Bahasa Inggris untuk komunikasi kerja<br />Microsoft Office dan administrasi HRIS</p></div></div></div>
+      <div class="profile-content"><p class="intro-text">Saya memulai karier di industri perhotelan dan restoran sebelum beralih ke bidang HR. Pengalaman memimpin tim operasional menjadi bekal untuk memahami kebutuhan karyawan dan perusahaan.</p><p>Saat ini saya menjabat sebagai Assistant Manager HRD di PT ITCI Kartika Utama, dengan tanggung jawab memimpin operasional dan tim HR.</p><p>Saya terbiasa berkomunikasi dengan karyawan, manajemen, dan instansi ketenagakerjaan untuk menyelesaikan persoalan administrasi maupun hubungan kerja.</p><div class="profile-details"><div><span>PENDIDIKAN SAAT INI</span><strong>S1 Hukum · sedang ditempuh</strong><p>Universitas Terbuka, Fakultas Hukum<br />2023 — sekarang</p></div><div><span>BAHASA & PERANGKAT KERJA</span><strong>Bahasa Indonesia & bahasa Inggris</strong><p>Bahasa Inggris untuk komunikasi kerja<br />Microsoft Office dan administrasi HRIS</p></div></div></div>
     </section>
 
     <section class="highlights-section" id="pencapaian"><div class="container section">
@@ -86,7 +86,7 @@ const experience = [
     </section>
 
     <section class="work-tools container" id="perangkat-kerja" aria-labelledby="tools-heading">
-      <div class="tools-heading"><div><p class="eyebrow">PERANGKAT KERJA</p><h2 id="tools-heading">Tools pendukung pekerjaan.</h2></div><button class="tools-pause" type="button" aria-pressed="false" aria-controls="tools-marquee">Jeda animasi</button></div>
+      <div class="tools-heading"><div><p class="eyebrow">PERANGKAT KERJA</p><h2 id="tools-heading">Perangkat pendukung kerja.</h2></div><button class="tools-pause" type="button" aria-pressed="false" aria-controls="tools-marquee">Jeda animasi</button></div>
       <p class="tools-description">Perangkat yang saya gunakan untuk administrasi SDM, kepesertaan BPJS, serta pencatatan inventaris dan aset.</p>
       <div class="tools-marquee" id="tools-marquee">
         <div class="tools-track">
@@ -97,7 +97,7 @@ const experience = [
               <div class="tool-mark"><svg class="system-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m3 9 13-6 13 6v15l-13 6-13-6V9Zm0 0 13 6 13-6M16 15v15M9 6l13 6"/></svg><span>Sistem internal<small>Inventaris & aset</small></span></div>
               <div class="tool-mark"><svg class="system-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m16 3 11 4v9c0 6-6 10-11 13C11 26 5 22 5 16V7l11-4Z"/><path d="M16 10v12M10 16h12"/></svg><span>e-Dabu<small>BPJS Kesehatan</small></span></div>
               <div class="tool-mark"><svg class="system-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="9" width="24" height="19" rx="3"/><path d="M11 9V5h10v4M4 16h24M13 16v4h6v-4"/></svg><span>SIPP<small>BPJS Ketenagakerjaan</small></span></div>
-              <div class="tool-mark"><svg class="system-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 4h18a4 4 0 0 1 4 4v13a4 4 0 0 1-4 4H12l-7 4v-5a4 4 0 0 1-2-3V8a4 4 0 0 1 4-4Z"/><path d="M10 12h12M10 18h8"/></svg><span>Chatbot AI<small>Asisten digital</small></span></div>
+              <div class="tool-mark"><svg class="system-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 4h18a4 4 0 0 1 4 4v13a4 4 0 0 1-4 4H12l-7 4v-5a4 4 0 0 1-2-3V8a4 4 0 0 1 4-4Z"/><path d="M10 12h12M10 18h8"/></svg><span>Asisten AI<small>Asisten digital</small></span></div>
             </div>
           </div>)}
         </div>
@@ -106,7 +106,7 @@ const experience = [
 
     <section class="section container" id="pengalaman">
       <div class="section-heading"><div><p class="eyebrow">03 / PENGALAMAN</p><h2>Riwayat pengalaman kerja.</h2></div><p>Dari HR Officer hingga<br class="desktop-break" /> Assistant Manager HRD.</p></div>
-      <div class="experience-list">{experience.map((job) => <article class:list={['job', { 'current-job': job.current }]}><div class="job-period"><span class="timeline-point" aria-hidden="true"></span><p>{job.period}</p>{job.current && <span class="current-label">Posisi saat ini</span>}</div><div class="job-body"><p class="job-company">{job.company}</p><h3>{job.role}</h3><ul>{job.details.map((detail) => <li>{detail}</li>)}</ul></div></article>)}</div>
+      <div class="experience-list">{experience.map((job) => <article class:list={['job', { 'current-job': job.current }]}><div class="job-period"><span class="timeline-point" aria-hidden="true"></span><p>{job.period}</p>{job.current && <span class="current-label">Posisi saat ini</span>}</div><div class="job-body"><p class="job-company">{job.company}</p><h3>{job.role}</h3><details class="job-details" open={job.current}><summary><span class="details-show">Lihat detail</span><span class="details-hide">Tutup detail</span><span class="details-sign" aria-hidden="true">+</span></summary><ul>{job.details.map((detail) => <li>{detail}</li>)}</ul></details></div></article>)}</div>
     </section>
 
     <section class="background-section"><div class="container section background-grid"><div><p class="eyebrow">04 / LATAR BELAKANG</p><h2>Bekal dari dunia operasional.</h2><p class="background-intro">Memimpin tim di industri perhotelan dan restoran memberi saya pengalaman langsung dalam pelatihan, evaluasi kinerja, serta pengelolaan kebutuhan operasional sehari-hari.</p></div><div class="background-list"><article><p class="small-label">September 2017 — 2019</p><h3>Assistant Store Manager</h3><p>PT Richeese Kuliner Indonesia</p><p class="background-detail">Memimpin lebih dari 50 karyawan, menangani pelatihan dan evaluasi kinerja, serta menyusun anggaran dan laporan operasional.</p></article><article><p class="small-label">2015 — 2017 & 2019 — 2020</p><h3>Perhotelan di Abu Dhabi</h3><p>St. Regis Hotel · Fairmont Bab Al Bahr</p><p class="background-detail">Bekerja sebagai Commis 2 di St. Regis Hotel dan Commis 1 di Fairmont Bab Al Bahr dalam lingkungan kerja internasional.</p></article><article><p class="small-label">2012 — 2015</p><h3>Pendidikan Diploma</h3><p>Politeknik Negeri Balikpapan</p></article></div></div></section>
@@ -118,6 +118,17 @@ const experience = [
 </BaseLayout>
 
 <script>
+  const printDetails = new Map<HTMLDetailsElement, boolean>();
+  window.addEventListener('beforeprint', () => {
+    document.querySelectorAll<HTMLDetailsElement>('.job-details').forEach((item) => {
+      printDetails.set(item, item.open);
+      item.open = true;
+    });
+  });
+  window.addEventListener('afterprint', () => {
+    printDetails.forEach((open, item) => { item.open = open; });
+    printDetails.clear();
+  });
   const header = document.querySelector<HTMLElement>('.site-header');
   const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.site-header a[href^="#"]'));
   const sections = Array.from(document.querySelectorAll<HTMLElement>('main section[id]'));
