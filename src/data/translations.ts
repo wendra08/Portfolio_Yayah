@@ -1,4 +1,8 @@
 export const translations: Record<string, string> = {
+  'Pratinjau CV': 'Preview CV', 'Tutup': 'Close',
+  'Jika PDF tidak tampil, buka di tab baru atau unduh dokumennya.': 'If the PDF does not display, open it in a new tab or download it.',
+  'Pratinjau dokumen CV Muhamad Yayah': 'Preview of Muhamad Yayah’s CV',
+  'Buka di tab baru ↗': 'Open in a new tab ↗',
   'Menu navigasi': 'Navigation menu',
   'Perangkat kerja': 'Work tools',
   'Hubungi Muhamad Yayah melalui WhatsApp, dibuka di tab baru': 'Contact Muhamad Yayah on WhatsApp, opens in a new tab',

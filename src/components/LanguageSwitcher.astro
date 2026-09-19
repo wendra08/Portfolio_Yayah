@@ -13,8 +13,8 @@
     if (node.parentElement?.closest('script, style, .language-switch')) continue;
     if (node.textContent?.trim()) originals.set(node, node.parentElement?.classList.contains('welcome-label') ? 'SELAMAT DATANG' : node.textContent);
   }
-  document.querySelectorAll('[aria-label], [alt], meta[name="description"]').forEach((element) => {
-    for (const name of ['aria-label', 'alt', 'content']) {
+  document.querySelectorAll('[aria-label], [alt], iframe[title], meta[name="description"]').forEach((element) => {
+    for (const name of ['aria-label', 'alt', 'content', 'title']) {
       const value = element.getAttribute(name);
       if (value) attributes.push({ element, name, value });
     }

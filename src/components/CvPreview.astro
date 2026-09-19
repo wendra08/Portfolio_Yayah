@@ -1,0 +1,37 @@
+<a class="cv-trigger" href="/documents/CV_Muhamad_Yayah_ATS.pdf" data-cv-preview>Pratinjau CV</a>
+<dialog class="cv-dialog" aria-labelledby="cv-title">
+  <div class="cv-header"><h2 id="cv-title">Pratinjau CV</h2><button type="button" class="cv-close" autofocus>Tutup</button></div>
+  <p class="cv-note">Jika PDF tidak tampil, buka di tab baru atau unduh dokumennya.</p>
+  <iframe title="Pratinjau dokumen CV Muhamad Yayah" data-src="/documents/CV_Muhamad_Yayah_ATS.pdf#view=FitH"></iframe>
+  <div class="cv-actions"><a href="/documents/CV_Muhamad_Yayah_ATS.pdf" target="_blank" rel="noopener noreferrer">Buka di tab baru ↗</a><a href="/documents/CV_Muhamad_Yayah_ATS.pdf" download>Unduh CV ↓</a></div>
+</dialog>
+<script>
+  const trigger = document.querySelector<HTMLAnchorElement>('[data-cv-preview]');
+  const dialog = document.querySelector<HTMLDialogElement>('.cv-dialog');
+  const frame = dialog?.querySelector('iframe');
+  trigger?.addEventListener('click', (event) => {
+    if (!dialog?.showModal) return;
+    event.preventDefault();
+    if (frame && !frame.src) frame.src = frame.dataset.src || '';
+    dialog.showModal();
+    document.documentElement.classList.add('cv-open');
+  });
+  dialog?.querySelector('.cv-close')?.addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('click', (event) => {
+    const bounds = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+  });
+  dialog?.addEventListener('close', () => {
+    document.documentElement.classList.remove('cv-open');
+    trigger?.focus();
+  });
+</script>
+<style>
+  .cv-trigger{font-size:14px;color:#236b62;text-underline-offset:5px;white-space:nowrap}
+  .cv-dialog{width:min(960px,calc(100% - 24px));height:min(850px,90dvh);max-height:90dvh;padding:20px;border:1px solid #d4dfd7;border-radius:8px;background:#faf9f6;color:#223344;box-sizing:border-box}
+  .cv-dialog[open]{display:flex;flex-direction:column;gap:12px}.cv-dialog::backdrop{background:rgb(20 34 44 / 70%)}
+  .cv-header{display:flex;justify-content:space-between;align-items:center;gap:20px}.cv-header h2{font-size:23px;margin:0}.cv-close{font:inherit;font-size:14px;cursor:pointer;padding:9px 16px;border:1px solid #aebfb5;border-radius:4px;background:white;color:#223344}
+  .cv-note{font-size:13px;margin:0;color:#64746b}.cv-dialog iframe{width:100%;flex:1;min-height:0;border:1px solid #d4dfd7;background:#fff}.cv-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:20px;font-size:14px}.cv-actions a{color:#236b62}:global(html.cv-open){overflow:hidden}
+  @media(max-width:700px){.cv-dialog{padding:14px}.cv-header h2{font-size:19px}}
+  @media print{.cv-trigger,.cv-dialog{display:none!important}}
+</style>
