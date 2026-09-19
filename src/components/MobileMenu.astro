@@ -1,0 +1,50 @@
+<details class="mobile-menu">
+  <summary aria-label="Menu navigasi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Menu</span></summary>
+  <div class="mobile-panel">
+    <a href="#profil">Profil</a>
+    <a href="#kompetensi">Kompetensi</a>
+    <a href="#general-affairs">General Affairs</a>
+    <a href="#pengalaman">Pengalaman</a>
+    <a href="#perangkat-kerja">Perangkat kerja</a>
+    <a href="#kontak">Kontak</a>
+    <a class="mobile-cv" href="/documents/CV_Muhamad_Yayah_ATS.pdf" download>Unduh CV ↓</a>
+  </div>
+</details>
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+  const trigger = menu?.querySelector('summary');
+  menu?.querySelectorAll<HTMLAnchorElement>('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.open = false;
+      const target = link.hash ? document.getElementById(link.hash.slice(1)) : null;
+      if (target) {
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
+      } else trigger?.focus();
+    });
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu?.open) { menu.open = false; trigger?.focus(); }
+  });
+  document.addEventListener('click', (event) => {
+    if (menu?.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false;
+  });
+  window.matchMedia('(max-width: 700px)').addEventListener('change', (event) => {
+    if (!event.matches && menu) menu.open = false;
+  });
+</script>
+<style>
+  .mobile-menu{display:none}
+  @media(max-width:700px){
+    .mobile-menu{display:block}
+    summary{display:flex;align-items:center;justify-content:center;width:44px;height:44px;list-style:none;cursor:pointer;border:1px solid #d4dfd7;border-radius:5px;color:#223344}
+    summary::-webkit-details-marker{display:none}summary>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+    summary:focus-visible{outline:2px solid #236b62;outline-offset:3px}
+    .mobile-menu[open] summary{background:#e8efea;border-color:#72988a}
+    .mobile-panel{position:absolute;top:100%;left:0;right:0;z-index:80;background:#faf9f6;border-block:1px solid #dce3de;box-shadow:0 14px 20px rgb(34 51 68 / 8%);padding:12px 20px 20px;max-height:calc(100svh - 100px);overflow-y:auto}
+    .mobile-panel a{display:block;color:#223344;text-decoration:none;font-size:16px;padding:12px 8px;border-bottom:1px solid #e4e9e4;min-height:48px}
+    .mobile-panel a:hover,.mobile-panel a:focus-visible{background:#edf2ed;color:#236b62}
+    .mobile-panel .mobile-cv{color:#236b62;font-weight:600;border-bottom:0}
+  }
+</style>

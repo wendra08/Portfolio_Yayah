@@ -1,4 +1,7 @@
 export const translations: Record<string, string> = {
+  'Menu navigasi': 'Navigation menu',
+  'Perangkat kerja': 'Work tools',
+  'Hubungi Muhamad Yayah melalui WhatsApp, dibuka di tab baru': 'Contact Muhamad Yayah on WhatsApp, opens in a new tab',
   'Muhamad Yayah — Assistant Manager HRD. Pengalaman dalam operasional HR, penggajian, rekrutmen, hubungan karyawan, serta administrasi inventaris dan aset.': 'Muhamad Yayah — Assistant Manager HRD. Experience in HR operations, payroll, recruitment, employee relations, and inventory and asset administration.',
   'Dukungan untuk': 'Supporting',
   'operasional perusahaan.': 'company operations.',

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatsAppContact from '../components/WhatsAppContact.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import MobileMenu from '../components/MobileMenu.astro';
 import { Image } from 'astro:assets';
 import portrait from '../assets/muhamad-yayah-formal.png';
 
@@ -31,12 +33,13 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 ---
 
 <BaseLayout>
+  <WhatsAppContact />
   <a class="skip-link" href="#konten">Langsung ke konten</a>
   <header class="site-header">
     <nav class="container" aria-label="Navigasi utama">
       <a class="brand" href="#beranda"><span>Muhamad Yayah<small>Human Resources</small></span></a>
       <div class="nav-links"><a href="#profil">Profil</a><a href="#kompetensi">Kompetensi</a><a href="#pengalaman">Pengalaman</a></div>
-      <div class="header-actions"><LanguageSwitcher /><a class="nav-contact" href="#kontak">Kontak <span aria-hidden="true">↗</span></a></div>
+      <div class="header-actions"><LanguageSwitcher /><a class="nav-contact" href="#kontak">Kontak <span aria-hidden="true">↗</span></a><MobileMenu /></div>
     </nav>
   </header>
 
@@ -143,6 +146,8 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   :global(a){color:inherit}
   :global(a:focus-visible){outline:3px solid #318078;outline-offset:5px}
   :global(::selection){background:#d2e5df}
+  .site-header{position:relative;z-index:90}
+  @media(max-width:700px){.header-actions .nav-contact{display:none}}
   .ga-section{background:#edf1ee;border-bottom:1px solid #dce3de}.ga-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;padding-block:80px}.ga-intro h2{font-size:35px}.ga-intro>p:not(.eyebrow){font-size:16px;line-height:1.8;color:#62746b;margin:24px 0}.ga-details article{display:flex;gap:22px;border-top:1px solid #cad7cd;padding:24px 0}.ga-details article:last-child{padding-bottom:0}.ga-number{font-size:11px;color:#6d8b7a;padding-top:3px}.ga-context{font-size:9px;letter-spacing:.12em;color:#376f62;margin:0 0 7px}.ga-details h3{font-size:21px;line-height:1.35;margin:0 0 11px}.ga-details article div>p:not(.ga-context){font-size:14px;line-height:1.75;color:#62746b;margin:0}.ga-details small{display:block;font-size:11px;color:#74867a;margin-top:12px}
   @media(max-width:960px){.ga-layout{gap:35px}.ga-intro h2{font-size:30px}}
   @media(max-width:700px){.ga-layout{grid-template-columns:1fr;padding-block:50px;gap:30px}.ga-intro h2{font-size:29px}.ga-details h3{font-size:19px}}

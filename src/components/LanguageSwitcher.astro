@@ -29,6 +29,12 @@
     originals.forEach((value, node) => { node.textContent = translate(value, lang); });
     attributes.forEach(({ element, name, value }) => element.setAttribute(name, translate(value, lang)));
     document.title = translate(originalTitle, lang);
+    const message = lang === 'en'
+      ? 'Hello Mr. Yayah, I came across your portfolio and would like to discuss an opportunity in HR/General Affairs.'
+      : 'Halo Pak Yayah, saya melihat portofolio Bapak dan ingin berdiskusi mengenai kesempatan di bidang HR/HRGA.';
+    document.querySelectorAll<HTMLAnchorElement>('[data-whatsapp]').forEach((link) => {
+      link.href = `https://wa.me/6281253481561?text=${encodeURIComponent(message)}`;
+    });
     document.querySelectorAll<HTMLButtonElement>('[data-language]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.language === lang)));
     const pause = document.querySelector('.tools-pause');
     if (pause) {
