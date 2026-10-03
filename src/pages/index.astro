@@ -221,4 +221,141 @@ const experience = [
   @media(max-width:700px){.container{width:calc(100% - 40px)}nav{min-height:80px}.brand{font-size:15px}.monogram{width:36px;height:36px;font-size:16px}.nav-links{display:none}.nav-contact{gap:10px;font-size:13px}.hero{grid-template-columns:1fr;padding-block:48px;gap:40px}.hero h1{font-size:66px}.hero .eyebrow{font-size:9px}.hero-role{font-size:21px}.hero-description{font-size:16px}.hero-actions{gap:22px;flex-wrap:wrap}.profile-sheet{margin-right:8px;max-width:480px;width:100%;padding-inline:25px}.summary-band>.container{grid-template-columns:1fr 1fr;gap:22px;padding-block:24px}.summary-band p{align-items:start;gap:10px}.summary-band p+p{padding-left:15px}.summary-band p:last-child{grid-column:1/-1;border-left:0;border-top:1px solid #d3dcd5;padding:18px 0 0}.summary-band strong{font-size:28px}.summary-band span{font-size:11px}.section{padding-block:60px}.profile-section,.background-grid,.contact-grid{grid-template-columns:1fr;gap:28px}.profile-content .intro-text{font-size:20px}.profile-details{gap:15px}.profile-details strong{font-size:13px}.section-heading{display:block;margin-bottom:30px}.section-heading>p{margin-top:16px}.desktop-break{display:none}h2{font-size:30px}.expertise-grid{grid-template-columns:1fr 1fr;column-gap:22px}.expertise-item h3{font-size:17px}.expertise-item p{font-size:13px}.job{grid-template-columns:1fr;gap:16px;padding-block:26px}.job-period{display:flex;align-items:center;gap:12px}.current-label{margin:0}.job h3{font-size:21px}.background-intro{max-width:none;margin-top:18px}.contact-section{padding-block:45px}.contact-links strong{font-size:16px}footer{flex-wrap:wrap;font-size:10px;gap:10px}footer a{margin-left:auto}}
   @media(max-width:390px){.expertise-grid{grid-template-columns:1fr}.hero h1{font-size:58px}.summary-band strong{font-size:25px}.summary-band small{font-size:9px}}
   @media(prefers-reduced-motion:reduce){:global(html){scroll-behavior:auto}.button-primary{transition:none}}
+  /* Editorial direction: warm paper, ink, and restrained brass details.
+     Screen-only keeps the compact CV-style print layout intact. */
+  @media screen {
+    :global(body){background:#f8f6f1;color:#24333d}
+    :global(::selection){background:#ded4bd;color:#24333d}
+    .container{width:min(1120px,calc(100% - 96px))}
+    .site-header{background:rgb(248 246 241 / 96%);border-color:#dedbd3}
+    nav{min-height:86px}
+    .brand{font-family:'Lora',Georgia,serif;font-weight:500;letter-spacing:-.035em;font-size:18px}
+    .brand small{font-family:'Source Sans 3',sans-serif;letter-spacing:.1em;font-size:10px;text-transform:uppercase;margin-top:7px}
+    .nav-links a{font-size:13px}
+    .hero{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:88px;padding-block:88px 76px}
+    .hero-copy{padding:0}
+    .eyebrow{color:#786344;font-size:10px;letter-spacing:.17em}
+    .rule{background:#9a8056;width:34px}
+    h1{font-size:clamp(64px,7.4vw,100px);font-weight:400;letter-spacing:-.065em;line-height:1.02;margin-bottom:28px}
+    .name-dot{color:#9a8056}
+    .hero-role{font-size:20px;letter-spacing:.015em;color:#24333d;margin-bottom:16px}
+    .hero-description{font-size:16px;line-height:1.85;color:#657078;max-width:440px}
+    .hero-actions{gap:20px;flex-wrap:wrap;margin-top:28px}
+    .button-primary{background:#24333d;border:1px solid #24333d;padding:12px 20px;border-radius:2px}
+    .button-primary:hover{background:#43534f;border-color:#43534f}
+    .text-link{border-color:#b9b4a8;font-size:13px}
+    .location{font-size:12px;margin-top:25px;color:#74786f}
+    .portrait{max-width:300px;margin:0 auto;width:100%;align-self:center}
+    .portrait::before{content:none}
+    .portrait-stage{border:7px solid #fff;border-radius:9px;outline:1px solid #dedbd3;box-shadow:0 12px 30px rgb(34 51 68 / 6%);background:#f3f4f2;overflow:hidden}
+    .portrait-stage::after{content:none}
+    .portrait img{width:100%;height:auto;opacity:1}
+    .portrait figcaption{margin:20px 0 0;padding:15px 0 0;text-align:left;border-top:1px solid #c9c3b6;min-height:0}
+    .portrait figcaption>span{color:#867354;font-size:9px;letter-spacing:.17em}
+    .portrait figcaption strong{font-family:'Lora',Georgia,serif;font-size:16px;font-weight:400;margin-top:6px}
+    .portrait figcaption p{color:#68716b;font-size:12px;margin-top:6px}
+    .summary-band{background:transparent;border-color:#dedbd3}
+    .summary-band>.container{padding-block:28px;grid-template-columns:1fr 1.1fr 1.2fr}
+    .summary-band strong{font-weight:400;font-size:36px;color:#786344}
+    .summary-band p+p{border-color:#dedbd3}
+    .summary-band span{color:#657078;font-size:13px}
+    .summary-band p:last-child strong{color:#24333d;font-weight:500;font-size:18px}
+    .section{padding-block:104px}
+    h2{font-size:40px;letter-spacing:-.045em;line-height:1.2}
+    .profile-section{grid-template-columns:1fr 1.75fr;gap:96px}
+    .profile-content .intro-text{font:400 24px/1.65 'Lora',Georgia,serif;letter-spacing:-.025em;color:#33433e}
+    .profile-content>p{font-size:16px;line-height:1.85}
+    .profile-details{border-color:#dedbd3;margin-top:34px;padding-top:28px}
+    .profile-details span{color:#867354}
+    .highlights-section{background:#263a40;color:#f8f6f1;border:0}
+    .highlights-section .eyebrow,.highlight-label{color:#c9b68e}
+    .highlights-section .section-heading>p{color:#afbec0}
+    .highlights-grid{gap:44px}
+    .highlight{border-top:1px solid #65736e;padding-top:28px}
+    .highlight h3{font-size:25px;font-weight:400;line-height:1.45}
+    .highlight-description{font-size:15px;color:#bdc9c9;line-height:1.85}
+    .highlight-context{color:#c9b68e;border-color:#4b5e5f;font-size:12px}
+    .expertise-section{background:transparent;border:0}
+    .expertise-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:76px}
+    .expertise-item{position:relative;padding:30px 0 32px 40px;border-color:#d8d5cc}
+    .item-number{position:absolute;left:0;top:34px;color:#9a8056;font-size:11px}
+    .expertise-item h3{font-size:20px;font-weight:500;margin-bottom:12px}
+    .expertise-item p{font-size:15px;line-height:1.8;color:#657078}
+    .item-tags{color:#867354;font-size:11px}
+    .ga-section{background:#eeece5;border-block:1px solid #dedbd3}
+    .ga-layout{padding-block:88px;gap:90px}
+    .ga-intro h2{font-size:36px}
+    .ga-context,.ga-number{color:#867354}
+    .ga-details article{border-color:#d2cdbf;padding-block:28px}
+    .ga-details h3{font-size:22px;font-family:'Lora',Georgia,serif;font-weight:400}
+    .ga-intro>p:not(.eyebrow),.ga-details article div>p:not(.ga-context){color:#626e6d}
+    .work-tools{padding-block:72px}
+    .tools-heading h2{font-size:30px}
+    .tools-marquee{border-color:#dedbd3}
+    .tool-mark>span{font-size:17px;font-weight:500}
+    .section-heading{margin-bottom:48px}
+    .experience-list,.job{border-color:#d8d5cc}
+    .job{padding-block:36px;grid-template-columns:28% minmax(0,1fr);gap:42px}
+    .job h3{font:400 27px/1.35 'Lora',Georgia,serif;letter-spacing:-.035em}
+    .job-company{color:#786344;font-size:13px;margin-bottom:10px}
+    .job ul{font-size:15px;line-height:1.85;color:#626e73}
+    .current-label{background:#e7e5dc;color:#5c674f;padding:4px 10px}
+    .background-section{background:#eeece5;border-color:#dedbd3}
+    .background-list article{border-color:#d2cdbf}
+    .background-list h3{font-weight:500}
+    .contact-section{background:#263a40;padding-block:88px}
+    .contact-section h2{font-size:52px}
+    .contact-section .eyebrow,.contact-arrow,.contact-links a>span:first-child{color:#c9b68e}
+    .contact-links a{border-color:#4b5e5f;padding-block:20px}
+    .contact-links a:first-child{border-color:#4b5e5f}
+    .contact-links strong{font-size:20px}
+    footer{padding-block:30px;color:#71766e}
+  }
+  @media screen and (max-width:960px){
+    .container{width:calc(100% - 56px)}
+    .hero{gap:40px;padding-block:68px}.hero-actions{gap:16px}
+    .profile-section,.ga-layout,.background-grid,.contact-grid{gap:44px}
+    .expertise-grid{column-gap:38px}.highlights-grid{gap:26px}
+    h2{font-size:34px}.highlight h3{font-size:22px}
+    .summary-band p+p{padding-left:20px}
+  }
+  @media screen and (max-width:700px){
+    .container{width:calc(100% - 40px)}
+    nav{min-height:76px}.brand{font-size:16px}.brand small{font-size:9px}
+    .hero{grid-template-columns:1fr;padding-block:48px 44px;gap:40px}
+    .hero-copy{padding:0}
+    .hero h1{font-size:72px}.hero-role{font-size:19px}
+    .hero-description{max-width:480px;font-size:16px}
+    .hero .eyebrow{font-size:9px;letter-spacing:.12em}
+    .portrait{max-width:230px;margin-inline:auto}
+    .portrait-stage{border-width:6px}
+    .portrait figcaption{margin-top:16px;padding:12px 0 0}
+    .portrait figcaption strong{font-size:15px}
+    .summary-band>.container{grid-template-columns:1fr 1fr;gap:22px;padding-block:26px}
+    .summary-band strong{font-size:29px}.summary-band span{font-size:12px}
+    .summary-band p+p{padding-left:14px}
+    .summary-band p:last-child{grid-column:1/-1;padding:18px 0 0}
+    .section{padding-block:64px}h2{font-size:32px}
+    .profile-section,.ga-layout,.background-grid,.contact-grid{grid-template-columns:1fr;gap:30px}
+    .profile-content .intro-text{font-size:21px;line-height:1.65}
+    .profile-details{grid-template-columns:1fr;gap:22px}
+    .section-heading{margin-bottom:32px}
+    .highlights-grid{grid-template-columns:1fr;gap:32px}
+    .highlight{padding-top:22px}.highlight h3{font-size:25px;max-width:420px}
+    .highlight-description{margin-bottom:20px}
+    .expertise-grid{grid-template-columns:1fr}
+    .expertise-item{padding-block:25px}.item-number{top:30px}
+    .expertise-item h3{font-size:20px}
+    .ga-layout{padding-block:60px}.ga-intro h2{font-size:32px}
+    .work-tools{padding-block:52px}.tools-heading h2{font-size:28px}
+    .job{grid-template-columns:1fr;gap:18px;padding-block:28px}.job h3{font-size:24px}
+    .contact-section{padding-block:60px}.contact-section h2{font-size:42px}
+    .contact-links strong{font-size:18px}
+  }
+  @media screen and (max-width:380px){
+    .hero h1{font-size:62px}
+    .summary-band>.container{grid-template-columns:1fr;gap:18px}
+    .summary-band p+p{border-left:0;padding-left:0}
+    .hero-actions{column-gap:16px}
+  }
 </style>
